@@ -1,0 +1,200 @@
+
+
+<!-- 
+    OVERALL PURPOSE FOR MAKING THIS :
+    HTML: Defines the structure of the webpage.
+CSS: Styles the HTML elements to create a visual representation of the solar system with the sun, Earth, and Moon. It uses positioning, colors, borders, and animations to simulate planetary orbits and appearances. -->
+<!DOCTYPE html>
+<!-- Declares the document type and version as HTML. -->
+<html lang="en">
+    <!-- it define document lang as a english -->
+<head>
+    <!-- head contain all meta info about the document..it not display on page thats it only here/in head tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System by using only html and css...!</title>
+    <!-- what appears on the browser tab -->
+    <style>
+        /* internal css I used here */
+        body{
+            /* it control overall layout */
+            margin: 0;
+            height: 100vh;
+            display: flex; /*display pro in middle; */
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(26, 22, 22);
+            overflow: hidden;
+            padding-top: 50px;
+        }
+        .container{
+            font: size 10px; 
+            width: 40em;
+            height: 40em;
+            position: relative;
+
+        }
+        .sun{
+            position: absolute;
+            top: 15em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 3em white;
+
+
+        }
+        h1{
+            color: rgb(234, 57, 204);
+            align-items: center;
+            /* justify-content: center; */
+            /* display: flex; */
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+        }
+        .earth, .moon{
+            position: absolute;
+            border-style: solid;
+            border-color: white
+            transparent
+            transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+
+        }
+        .earth{
+            top:5em;
+            left: 5em;
+            width: 30em;
+            height: 30em;
+            animation: orbit 36.5s linear infinite;
+
+        }
+        .moon{
+            top:0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 2.7s linear infinite;
+        }
+        .earth::before,
+        .moon::before{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+
+
+        }
+        .earth::before{
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: aqua;
+        }
+
+        .moon::before{
+            top: 0.8em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: silver;
+        }
+
+/* navbar and footer style is here */
+
+
+/* for Navbar Styling */
+.navbar {
+  background-color: #d2b007;
+  color: rgb(10, 201, 26);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: rgb(24, 26, 27);
+}
+/* for makes Grass Style */
+.grass {
+  background: linear-gradient(#4CAF50, #4CAF50 50%, transparent 20%, transparent);
+  background-size: 10% 5px; /* we can Adjust the height of grass form here */
+  height: 50px; /* Adjust the height of the grass*/
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+        @keyframes orbit{
+            to{
+                transform: rotate(360deg);
+
+            }
+
+        }
+        /* keyframes means it define ki what element should change over time  */
+    </style>
+
+</head>
+<!-- <body>
+    this is only for planet but i have to add additional property so we comment this part and then make navbar and footer
+
+    <div class="container">
+        <div class="sun">        
+            <h1>Aaruu</h1>
+            
+        </div>
+        <div class="earth">
+            <div class="moon">        
+</div>
+        </div>
+    </div>
+    
+</body> -->
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="sun">        
+            <h1>Aaruu</h1>
+            
+        </div>
+        <div class="earth">
+            <div class="moon">        
+</div>
+        </div>
+    </div>
+
+    <div class="grass"></div>
+
+   
+</body>
+
+
+</html>
